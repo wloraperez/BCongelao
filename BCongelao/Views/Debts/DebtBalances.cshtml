@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BCongelao.Models.SaleDebt>
+
+@{
+    ViewData["Title"] = "Deudas por tipo de pago";
+}
+
+<h2>Deudas por tipo de pago</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Debt)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Debt)
+                </td>
+            </tr>
+        }
+        <tr>
+            <th>
+                Total Deudas
+            </th>
+            <th>
+                @ViewBag.TotalDeudaBalances
+            </th>
+            <th></th>
+        </tr>
+    </tbody>
+</table>

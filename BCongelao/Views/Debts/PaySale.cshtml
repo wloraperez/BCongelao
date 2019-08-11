@@ -1,0 +1,108 @@
+﻿@model BCongelao.Models.Sale
+
+@{
+    ViewData["Title"] = "PaySale";
+}
+
+<h3>Are you sure you want to pay all of this Sale?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesPerson)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SalesPerson.SalesPersonName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SaleDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SaleDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaymentType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Delivery)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Delivery)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalNoITBIS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalNoITBIS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ITBIS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ITBIS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Debt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Debt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusSale)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusSale)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+    </dl>
+
+    <form asp-action="PaySale">
+        <input type="hidden" asp-for="SaleId" />
+        <input type="submit" value="PaySale" class="btn btn-default" /> |
+        <a asp-action="DebtSales">Back to List</a>
+    </form>
+</div>

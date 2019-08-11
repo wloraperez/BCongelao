@@ -1,0 +1,20 @@
+﻿@model BCongelao.Models.SaleDetail
+
+@{
+    int i = ViewBag.i == null ? 0 : ViewBag.i;
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<label>Detail: @i</label>*@
+        <div class="form-group">
+            <p>
+                <label class="control-label">(@i) Quantity:</label> @Html.TextBox(null, 1, null, new { @Name = "SaleDetails[" + i + "].Quantity", @class = "form-control", @style = "width: 15%; display: inline-block;" })
+                <label class="control-label">Product:</label> @Html.DropDownList(null, ViewBag.ProductId, null, new { @Name = "SaleDetails[" + i + "].ProductId", @class = "form-control", @style = "width: 35%; display: inline-block;" })
+                <label class="control-label">Discount:</label> @Html.TextBox(null, 0, null, new { @Name = "SaleDetails[" + i + "].Discount", @class = "form-control", @style = "width: 15%; display: inline-block;" })
+                @*<b>Presentación:</b> @Html.DropDownList(null, ViewBag.EnvaseId, null, new { @Name = "SaleDetails[" + i + "].EnvaseId" })*@
+            </p>
+        </div>
+    </div>
+</div>

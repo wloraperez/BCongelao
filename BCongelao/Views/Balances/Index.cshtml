@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BCongelao.Models.Balance>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BalanceId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BalanceId">Details</a>
+                    @*|<a asp-action="Delete" asp-route-id="@item.BalanceId">Delete</a>*@
+                </td>
+            </tr>
+        }
+        <tr>
+            <th>
+                Total Balance
+            </th>
+            <th>
+                @ViewBag.TotalBalance
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>
+                Total Gasto
+            </th>
+            <th>
+                @ViewBag.TotalGasto
+            </th>
+            <th></th>
+        </tr>
+    </tbody>
+</table>

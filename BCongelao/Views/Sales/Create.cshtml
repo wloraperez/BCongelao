@@ -1,0 +1,69 @@
+﻿@model BCongelao.Models.Sale
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Sale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SalesPersonId" class="control-label"></label>
+                <select asp-for="SalesPersonId" class="form-control" asp-items="ViewBag.SalesPersonId"><option></option></select>
+            </div>
+            <label style="font-weight:lighter;font-size: 0.8em;color: blue;">Seleccione el cliente o escriba el nombre, sino existe.</label>
+            <br />
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"><option value="0"></option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerName" class="control-label"></label>
+                <input asp-for="Customer.CustomerName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerDescription" class="control-label"></label>
+                <input asp-for="CustomerDescription" class="form-control" />
+                <span asp-validation-for="CustomerDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleDate" class="control-label"></label>
+                <input asp-for="SaleDate" class="form-control" />
+                <span asp-validation-for="SaleDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentType" class="control-label"></label>
+                <select asp-for="PaymentType" class="form-control" asp-items="Html.GetEnumSelectList<BCongelao.Models.Enum.PaymentType>()"></select>
+                <span asp-validation-for="PaymentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Delivery" class="control-label"></label>
+                <input asp-for="Delivery" class="form-control" />
+                <span asp-validation-for="Delivery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a> |
+    <a asp-area="" asp-controller="SaleDetails" asp-action="Create" asp-route-id="@ViewBag.SaleId">Detalle de venta</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $("#CustomerId").change(function () {
+            $("#Customer_CustomerName").val($("option:selected", $("#CustomerId")).text());
+        });
+    </script>
+
+}

@@ -1,0 +1,120 @@
+﻿@model BCongelao.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTypeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductTypeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Alcohol)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Alcohol)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ComercioId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ComercioId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ITBIS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ITBIS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Envase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Envase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityUnit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuantityUnit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityUnit2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuantityUnit2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UnitsInStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusProduct)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StatusProduct)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

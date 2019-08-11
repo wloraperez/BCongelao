@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-BCongelao-5D4CEEEC-EB44-4268-9448-D97F1BF9322D</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190116131726_sale20190116.cs" />
+    <Compile Remove="Migrations\20190116131726_sale20190116.Designer.cs" />
+    <Compile Remove="Migrations\20190116145241_sale20190116-2.cs" />
+    <Compile Remove="Migrations\20190116145241_sale20190116-2.Designer.cs" />
+    <Compile Remove="Migrations\20190131140413_customer.cs" />
+    <Compile Remove="Migrations\20190131140413_customer.Designer.cs" />
+    <Compile Remove="Migrations\20190204151346_transfer.cs" />
+    <Compile Remove="Migrations\20190204151346_transfer.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Debts\PaySale.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\SalesMD\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
